@@ -1,0 +1,26 @@
+/* styles.css */
+
+/* Styles for the popup */
+body {
+    font-family: Arial, sans-serif;
+    min-width: 200px;
+    padding: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+/* Optional: Styles for highlighted elements */
+.ai-plugin-highlight {
+    /* Styles are already applied via inline styles in contentScript.js */
+}
