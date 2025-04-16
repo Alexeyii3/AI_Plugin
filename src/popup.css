@@ -1,0 +1,444 @@
+/* Modern flat design with clean interface */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 320px;
+    min-height: 400px;
+    color: #333;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    margin-right: 12px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2a6cbf;
+}
+
+.status-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.site-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.status-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.site-name {
+    font-weight: 500;
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.site-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 50px;
+    background-color: #e0e0e0;
+    color: #666;
+}
+
+.site-badge.news {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.site-badge.non-news {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Add this to your existing CSS */
+.site-badge.pending {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-count {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2a6cbf;
+}
+
+.highlight-count {
+    color: #e67e22;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.controls {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Toggle Switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #2a6cbf;
+}
+
+input:focus + .toggle-slider {
+    box-shadow: 0 0 1px #2a6cbf;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.info-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex-grow: 1;
+}
+
+.info-header {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2a6cbf;
+}
+
+.info-panel p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+.version {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Custom Sites Section */
+.custom-sites {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.custom-sites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #2a6cbf;
+}
+
+.action-button {
+    background-color: #2a6cbf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #1d5ba3;
+}
+
+.site-list-container {
+    max-height: 120px;
+    overflow-y: auto;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+
+.site-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.site-item:last-child {
+    border-bottom: none;
+}
+
+.delete-site {
+    color: #dc3545;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.delete-site:hover {
+    color: #bd2130;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 12px;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Feedback Messages */
+.message {
+    margin-top: 8px;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.message.fade {
+    animation: fade-out 2s forwards;
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* Add these styles to your existing CSS file */
+
+.detailed-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.detailed-stats .stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.stat-count.fake-news {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.stat-count.clickbait {
+    color: #f0ad4e;
+    font-weight: bold;
+}
+
+.stat-count.both {
+    color: #5bc0de;
+    font-weight: bold;
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.color-sample {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.color-sample.orange {
+    background: rgba(255, 220, 180, 0.8);
+    border-left: 3px solid #f0ad4e;
+}
+
+.color-sample.red {
+    background: rgba(255, 200, 200, 0.8);
+    border-left: 3px solid #d9534f;
+}
+
+/* Add these styles to your existing CSS file */
+
+.stats-refresh {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.refresh-button {
+    background-color: #2a6cbf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+    background-color: #1d5ba3;
+}
+
+/* Add animation for count values */
+@keyframes count-highlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); color: #d9534f; }
+    100% { transform: scale(1); }
+}
+
+.count-animation {
+    animation: count-highlight 0.8s ease-in-out;
+}

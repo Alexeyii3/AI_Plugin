@@ -1,0 +1,1 @@
+import*as tf from"@tensorflow/tfjs";class L2{constructor(t){this.l2=t&&t.l2?t.l2:.01}apply(t){return tf.tidy((()=>{const s=tf.sum(tf.mul(t,t));return tf.mul(tf.scalar(.5*this.l2),s)}))}getConfig(){return{l2:this.l2}}static className="L2"}tf.serialization.registerClass(L2);export default L2;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="../icons/icon48.png" alt="News Analyzer Logo">
+            </div>
+            <h1>News Analyzer</h1>
+        </header>
+        
+        <div class="status-card">
+            <div class="site-info" id="siteInfo">
+                <span class="status-label">Current site:</span>
+                <span class="site-name" id="currentSite">Loading...</span>
+                <span class="site-badge" id="siteBadge">Unknown</span>
+            </div>
+            
+            <div class="stats" id="analysisStats">
+                <div class="stat-item">
+                    <span class="stat-count" id="totalAnalyzed">0</span>
+                    <span class="stat-label">Elements analyzed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-count highlight-count" id="highlightCount">0</span>
+                    <span class="stat-label">Potential issues</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="toggle-container">
+                <span class="toggle-label">Highlight unverified claims</span>
+                <label class="toggle">
+                    <input type="checkbox" id="highlightToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="custom-sites">
+            <div class="custom-sites-header">
+                <span class="section-title">Custom News Sites</span>
+                <button id="addSiteBtn" class="action-button">Add Current</button>
+            </div>
+            <div class="site-list-container">
+                <ul id="customSitesList" class="site-list">
+                    <!-- Custom sites will be populated here -->
+                </ul>
+                <div id="emptySitesMessage" class="empty-message">No custom sites added yet.</div>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <div class="info-header">How it works</div>
+            <p>This extension analyzes news articles and highlights potentially unverified claims or clickbait. Yellow highlights indicate content that may require additional verification.</p>
+        </div>
+        
+        <footer>
+            <div class="version">v1.0</div>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
